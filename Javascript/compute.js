@@ -2,12 +2,12 @@ function computeNumbers() {
     var GameNumer = document.getElementById('gameNumer').value;
     var WinRate = document.getElementById('winRate').value;
     var WantWinRate = document.getElementById('Demand').value;
-    if (GameNumer === "" || WinRate === "" || WantWinRate === "") {
-        alert("数值为空！");
-        return 0；
+    if ((GameNumer === "" || WinRate === "" || WantWinRate === "") || (GameNumer <= 0 || WinRate <= 0 || WantWinRate <= 0)) {
+        alert("数值不能为空、为0、为负数！");
+        return 0;
     } else {
         if (WinRate >= 1) {
-            WinRate /=  100;
+            WinRate /= 100;
         }
         var WinNumber = Math.floor(GameNumer * WinRate);
 
@@ -21,12 +21,12 @@ function computeNumbers() {
         var NewWinNumber = WinNumber;
         var NewWinRate = 0;
         if (WantWinRate < 1) {
-            WantWinRate *=  100;
+            WantWinRate *= 100;
         }
-        if (WantWinRate == 100)｛
-            alert('胜率无法到达100％');
+        if (WantWinRate >= 100) {
+            alert("胜率无法大于或等于100%");
             return 0;
-        ｝
+        }
         while (NewWinRate < WantWinRate) {
             NewGameNumer++;
             NewWinNumber++;
