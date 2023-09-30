@@ -4,8 +4,9 @@ function computeNumbers() {
     var WantWinRate = document.getElementById('Demand').value;
     if (GameNumer === "" || WinRate === "" || WantWinRate === "") {
         alert("数值为空！");
+        return 0；
     } else {
-        if (WinRate > 1) {
+        if (WinRate >= 1) {
             WinRate /=  100;
         }
         var WinNumber = Math.floor(GameNumer * WinRate);
@@ -22,6 +23,10 @@ function computeNumbers() {
         if (WantWinRate < 1) {
             WantWinRate *=  100;
         }
+        if (WantWinRate === 100)｛
+            alert('胜率无法到达100％');
+            return 0;
+        ｝
         while (NewWinRate < WantWinRate) {
             NewGameNumer++;
             NewWinNumber++;
