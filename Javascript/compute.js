@@ -23,7 +23,7 @@ function computeNumbers() {
         if (WantWinRate < 1) {
             WantWinRate *=  100;
         }
-        if (WantWinRate === 100)｛
+        if (WantWinRate == 100)｛
             alert('胜率无法到达100％');
             return 0;
         ｝
