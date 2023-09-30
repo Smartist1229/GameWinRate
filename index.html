@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="image/icon.jpg" />
+    <title>胜率计算器</title>
+    <script src="Javascript/compute.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .PageContent {
+            text-align: center;
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: #ebebeb;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        input {
+            height: 20px;
+        }
+
+        .button {
+            width: 100px;
+            height: 40px;
+        }
+
+        #text {
+            color: red;
+            font-weight: blod;
+        }
+        .showDiv{
+            margin:15px auto 0px;
+            width: 150px;
+            height: 150px;
+        }
+        .show {
+            color: #888888;
+            font-size: 15px;
+            margin-top: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <p>这个代码是在保证每局都赢的情况下进行运算。</p>
+    <div class="showDiv">
+        <p class="show" id="showtext"></p>
+        <p class="show" id="AllGameNumber"></p>
+        <p class="show" id="WinGameNumber"></p>
+        <p class="show" id="GameWinRate"></p>
+    </div>
+    <div class="PageContent">
+        <table>
+            <tr>
+                <td>总局数：</td>
+                <td><input id="gameNumer" type="number" placeholder="整数，例如：5" title="游戏总局数" /></td>
+            </tr>
+            <tr>
+                <td>胜率：</td>
+                <td><input id="winRate" type="number" placeholder="例如25.54%或0.2554" title="百分比或0点小数，例如25.54%或0.2554" />
+                </td>
+            </tr>
+            <tr>
+                <td>期望胜率：</td>
+                <td><input id="Demand" type="number" placeholder="例如25.54或0.2554" title="百分比或0点小数，例如25.54%或0.2554" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><span id="text"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="提交" class="button" onclick="computeNumbers()"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
